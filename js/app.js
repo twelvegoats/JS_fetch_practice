@@ -46,6 +46,12 @@ const render = (users, container) => {
   container.append(ul);
 };
 
+const getRickAndMortyCharacters = async () => {
+  const response = await fetch('https://rickandmortyapi.com/api/character');
+  return await response.json();
+};
+// Returns: { info: {...}, results: [characters array] }
+
 (async () => {
   const users = await getUsers();
 
